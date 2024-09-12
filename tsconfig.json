@@ -10,11 +10,7 @@
     ],
     "vueCompilerOptions": {
         "plugins": [
-            "@vue-macros/volar/define-models",
-            "@vue-macros/volar/define-props",
-            "@vue-macros/volar/define-props-refs",
-            "@vue-macros/volar/short-vmodel",
-            "@vue-macros/volar/export-props"
+            "unplugin-vue-macros/volar"
         ],
         "experimentalDefinePropProposal": "kevinEdition"
     }

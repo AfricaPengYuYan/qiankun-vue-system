@@ -1,23 +1,25 @@
 import Vue from '@vitejs/plugin-vue';
-import VueMacros from 'unplugin-vue-macros/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
-import Inspect from 'vite-plugin-inspect';
 import qiankun from 'vite-plugin-qiankun';
 
 // https://vitejs.dev/config/
 export default defineConfig({
     base: "./",
     plugins: [
-        VueMacros({
-            plugins: {
-                vue: Vue(),
-            },
-        }),
-
-        Inspect(),
+        Vue(),
 
         qiankun("qiankun-vue-system", {
             useDevMode: true
+        }),
+
+        AutoImport({
+            resolvers: [ElementPlusResolver()],
+        }),
+        Components({
+            resolvers: [ElementPlusResolver()],
         }),
     ],
     server: {
