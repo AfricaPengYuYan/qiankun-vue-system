@@ -21,13 +21,28 @@
         "noFallthroughCasesInSwitch": true,
         "types": [
             "unplugin-vue-macros/macros-global"
-        ]
+        ],
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "#/*": [
+                "types/*"
+            ]
+        }
     },
     "include": [
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
         "src/**/*.vue",
+        "types/**/*.ts",
+        "types/**/*.d.ts",
         "vite.config.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
     ]
 }

@@ -2,9 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 export const constantRoutes = [
     {
-        path: '/',
-        name: 'Home',
-        component: () => import('@/views/home.vue'),
+        path: '/role',
+        name: 'Role',
+        component: () => import('@/views/system/role.vue'),
+    },
+    {
+        path: '/user',
+        name: 'User',
+        component: () => import('@/views/system/user.vue'),
     },
 ];
 
@@ -15,7 +20,7 @@ const router = createRouter({
         if (savedPosition) {
             return savedPosition;
         } else {
-            return { top: 0 };
+            return { left: 0, top: 0 };
         }
     },
 });
