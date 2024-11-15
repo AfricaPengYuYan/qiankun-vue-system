@@ -14,7 +14,7 @@ export const constantRoutes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory("/qiankun-vue-system"),
     routes: constantRoutes,
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
